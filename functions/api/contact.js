@@ -1,4 +1,9 @@
 export async function onRequestPost(context) {
+  const corsHeaders = {
+    'Access-Control-Allow-Origin': '*',
+    'Content-Type': 'application/json',
+  };
+
   try {
     const formData = await context.request.formData();
     const data = Object.fromEntries(formData);
@@ -6,11 +11,17 @@ export async function onRequestPost(context) {
     const RESEND_API_KEY = context.env.RESEND_API_KEY;
     const TO_EMAIL = context.env.TO_EMAIL || 'connect@squarerootseo.com';
 
+    if (!RESEND_API_KEY) {
+      return new Response(JSON.stringify({ success: false, error: 'API key not configured' }), {
+        status: 500, headers: corsHeaders,
+      });
+    }
+
     // Build email HTML
     const emailHtml = `
       <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:20px;">
         <div style="background:#206dff;color:#fff;padding:20px 24px;border-radius:12px 12px 0 0;">
-          <h2 style="margin:0;">📩 New Contact Form Submission</h2>
+          <h2 style="margin:0;">New Contact Form Submission</h2>
           <p style="margin:5px 0 0;opacity:0.85;">From squarerootseo.com Contact Page</p>
         </div>
         <div style="border:1px solid #e5e7eb;border-top:none;border-radius:0 0 12px 12px;padding:24px;">
@@ -37,13 +48,9 @@ export async function onRequestPost(context) {
             </tr>
           </table>
         </div>
-        <p style="color:#9ca3af;font-size:12px;margin-top:16px;text-align:center;">
-          Sent from srs-final.pages.dev — ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
-        </p>
       </div>
     `;
 
-    // Send via Resend
     const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -58,24 +65,30 @@ export async function onRequestPost(context) {
       }),
     });
 
+    const resBody = await res.text();
+
     if (!res.ok) {
-      const err = await res.text();
-      console.error('Resend error:', err);
-      return new Response(JSON.stringify({ success: false, error: 'Failed to send email' }), {
-        status: 500,
-        headers: { 'Content-Type': 'application/json' },
+      return new Response(JSON.stringify({ success: false, error: resBody }), {
+        status: 500, headers: corsHeaders,
       });
     }
 
     return new Response(JSON.stringify({ success: true }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
+      status: 200, headers: corsHeaders,
     });
   } catch (error) {
-    console.error('Function error:', error);
-    return new Response(JSON.stringify({ success: false, error: 'Server error' }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
+    return new Response(JSON.stringify({ success: false, error: error.message }), {
+      status: 500, headers: corsHeaders,
     });
   }
+}
+
+export async function onRequestOptions() {
+  return new Response(null, {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    },
+  });
 }
