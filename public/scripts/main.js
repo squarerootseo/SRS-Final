@@ -246,4 +246,54 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // ----- Form Submission Handler (reusable) -----
+  function handleFormSubmit(formId, endpoint) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+
+      // Loading state
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+
+      try {
+        const formData = new FormData(form);
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          body: formData,
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          btn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Sent Successfully!';
+          btn.style.background = '#16a34a';
+          form.reset();
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.background = '';
+            btn.disabled = false;
+          }, 3000);
+        } else {
+          throw new Error('Send failed');
+        }
+      } catch (err) {
+        btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Failed — Try Again';
+        btn.style.background = '#dc2626';
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 3000);
+      }
+    });
+  }
+
+  // Wire up both forms
+  handleFormSubmit('contactForm', '/api/contact');
+  handleFormSubmit('acidForm', '/api/acid-test');
 });
