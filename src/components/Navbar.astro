@@ -7,7 +7,7 @@ const { activePage = '' } = Astro.props;
 
 <nav class="navbar" id="home">
   <div class="container">
-    <a href="/" class="navbar__logo"><img src="/srs_logo.png" alt="Square Root SEO"></a>
+    <a href="/" class="navbar__logo"><img src="/srs_logo.png" alt="Square Root SEO" style="width:160px; height:auto;"></a>
     <div class="navbar__links">
       <a href="/" class:list={[{ active: activePage === 'home' }]}>Home</a>
       <a href="/about" class:list={[{ active: activePage === 'about' }]}>About</a>
