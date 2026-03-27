@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact Us — Let's Build Your Digital Factory | Square Root SEO" description="Get in touch with Square Root SEO. Let's discuss how we can help your B2B manufacturing business generate qualified leads from Google." activePage="contact">
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container text-center">
+    <span class="cmn-tag p1-bg">Let's Talk</span>
+    <h1>Build Your <span class="p1-clr">Digital Factory</span></h1>
+    <p class="page-hero__sub">Ready to turn your website into a B2B lead generation machine? Get in touch and let's build your Digital Factory together.</p>
+  </div>
+</section>
+
+<!-- CONTACT INFO + FORM -->
+<section class="lead-form-section" id="contact" style="padding: 80px 0 0;">
+  <div class="container">
+    <!-- Info Cards Row -->
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:60px;">
+      <div style="background:var(--white); border-radius:16px; padding:32px 24px; box-shadow:var(--shadow); text-align:center;">
+        <div style="width:56px;height:56px;border-radius:50%;background:rgba(32,109,255,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;"><i class="fa-solid fa-phone" style="font-size:22px;color:var(--p1-clr);"></i></div>
+        <h4 style="margin-bottom:8px;font-size:16px;">Call Us</h4>
+        <a href="tel:+919981705434" style="color:var(--p1-clr);font-weight:600;font-size:17px;">+91 99817 05434</a>
+        <p style="color:var(--text-muted);font-size:13px;margin-top:6px;">Mon–Sat, 10am–7pm IST</p>
+      </div>
+      <div style="background:var(--white); border-radius:16px; padding:32px 24px; box-shadow:var(--shadow); text-align:center;">
+        <div style="width:56px;height:56px;border-radius:50%;background:rgba(32,109,255,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;"><i class="fa-solid fa-envelope" style="font-size:22px;color:var(--p1-clr);"></i></div>
+        <h4 style="margin-bottom:8px;font-size:16px;">Email Us</h4>
+        <a href="mailto:connect@squarerootseo.com" style="color:var(--p1-clr);font-weight:600;font-size:15px;">connect@squarerootseo.com</a>
+        <p style="color:var(--text-muted);font-size:13px;margin-top:6px;">We reply within 24 business hours</p>
+      </div>
+      <div style="background:var(--white); border-radius:16px; padding:32px 24px; box-shadow:var(--shadow); text-align:center;">
+        <div style="width:56px;height:56px;border-radius:50%;background:rgba(32,109,255,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;"><i class="fa-solid fa-location-dot" style="font-size:22px;color:var(--p1-clr);"></i></div>
+        <h4 style="margin-bottom:8px;font-size:16px;">Visit Us</h4>
+        <p style="color:var(--text);font-size:14px;line-height:1.6;">Square Root SEO LLP, 7th Floor, Regus – Indore, Maloo 1, Near Velocity III, Indore, MP – 452001</p>
+      </div>
+    </div>
+
+    <!-- Form + Content Row -->
+    <div class="lead-form__wrapper">
+      <div class="lead-form__content reveal">
+        <span class="cmn-tag p3-bg" style="color:var(--n900-clr);">500+ Enquiries Generated</span>
+        <h2>Ready to Build Your <span style="color:var(--p3-clr);">Digital Factory?</span></h2>
+        <p>Let's have a quick chat. Tell us about your business and we'll show you exactly how to generate consistent B2B leads from Google — without paying third-party marketplaces.</p>
+        <ul class="lead-form__trust">
+          <li><i class="fa-solid fa-circle-check"></i> No consultancy fees. Completely free call.</li>
+          <li><i class="fa-solid fa-circle-check"></i> We reply within 24 hours on business days.</li>
+          <li><i class="fa-solid fa-circle-check"></i> No obligation. No hard selling.</li>
+        </ul>
+        <a href="https://wa.me/919981705434" target="_blank" class="lead-form__wa">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>Prefer WhatsApp? Chat Now &rarr;</span>
+        </a>
+      </div>
+      <div class="lead-form__card reveal" style="transition-delay:0.15s;">
+        <h3>Get a Free Factory Audit</h3>
+        <p class="lead-form__sub">We'll review your digital presence and share a clear roadmap.</p>
+        <form class="lead-gen-form" id="contactForm">
+          <div class="form-group">
+            <label for="cName">Full Name <span class="required">*</span></label>
+            <input type="text" id="cName" name="name" placeholder="e.g. Rahul Sharma" required>
+          </div>
+          <div class="form-group">
+            <label for="cCompany">Company Name <span class="required">*</span></label>
+            <input type="text" id="cCompany" name="company" placeholder="e.g. Sharma Packaging LLP" required>
+          </div>
+          <div class="form-group">
+            <label for="cPhone">WhatsApp Number <span class="required">*</span></label>
+            <input type="tel" id="cPhone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+          <div class="form-group">
+            <label for="cService">I'm Interested In</label>
+            <select id="cService" name="service">
+              <option value="">— Select a Service —</option>
+              <option>SEO &amp; Content Strategy</option>
+              <option>Google Ads (PPC)</option>
+              <option>Website Development</option>
+              <option>Full Digital Factory (A.C.I.D)</option>
+              <option>Social Media Marketing</option>
+              <option>Not Sure — Just Audit First</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cMsg">Your Message <span class="optional">(Optional)</span></label>
+            <textarea id="cMsg" name="message" rows="3" placeholder="Tell us a bit about your products or current challenges..."></textarea>
+          </div>
+          <button type="submit" class="common-btn p3-bg box-style w-100">
+            Build My Digital Factory &nbsp;<i class="fa-solid fa-arrow-right-long"></i>
+          </button>
+          <p class="form-footer"><i class="fa-solid fa-lock"></i> Your data is safe. No spam, ever.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOOGLE MAPS -->
+<section style="background:var(--cmnbg); padding: 60px 0;">
+  <div class="container">
+    <div style="border-radius:20px; overflow:hidden; box-shadow:var(--shadow);">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.529657571093!2d75.90377!3d22.745717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd1a79cd7959%3A0xcb75f00bd8a5dd38!2sSquare%20Root%20SEO%20LLP%20-%20Digital%20Marketing%20Agency!5e0!3m2!1sen!2sin!4v1774610012066!5m2!1sen!2sin" width="100%" height="400" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="contact-faq" style="padding-top: 20px; padding-bottom: 80px;">
+  <div class="container">
+    <div class="section-title text-center reveal">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="contact-faq__grid reveal">
+      <div class="contact-faq__item">
+        <h4><i class="fa-solid fa-circle-question p1-clr"></i> How quickly can I expect results?</h4>
+        <p>Most clients see measurable traffic increases within 90 days. Full Digital Factory impact is typically visible in 6 months.</p>
+      </div>
+      <div class="contact-faq__item">
+        <h4><i class="fa-solid fa-circle-question p1-clr"></i> Do you work with companies outside Indore?</h4>
+        <p>Yes! We work with B2B manufacturers across India. Our process is fully remote, documented, and transparent.</p>
+      </div>
+      <div class="contact-faq__item">
+        <h4><i class="fa-solid fa-circle-question p1-clr"></i> Is the ACID Test really free?</h4>
+        <p>Absolutely. We offer a limited number of free A.C.I.D audits each month. There's zero obligation and no hard selling.</p>
+      </div>
+      <div class="contact-faq__item">
+        <h4><i class="fa-solid fa-circle-question p1-clr"></i> What industries do you work with?</h4>
+        <p>We specialise in B2B manufacturing: packaging, chemicals, fabrics, automation, industrial supplies, labels, and more.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</BaseLayout>

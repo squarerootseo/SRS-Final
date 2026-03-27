@@ -1,0 +1,17 @@
+---
+interface Props {
+  tag: string;
+  tagClass?: string;
+  heroClass?: string;
+}
+const { tag, tagClass = 'p1-bg', heroClass = 'page-hero' } = Astro.props;
+---
+
+<section class={heroClass}>
+  <div class="container text-center">
+    <span class={`cmn-tag ${tagClass}`}>{tag}</span>
+    <slot name="heading" />
+    <slot name="subtext" />
+    <slot />
+  </div>
+</section>
