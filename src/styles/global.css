@@ -253,14 +253,19 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
 }
 
+.navbar__logo {
+  flex-shrink: 0;
+}
+
 .navbar__logo img {
   height: 75px;
+  width: auto;
 }
 
 .navbar__links {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 28px;
 }
 
 .navbar__links a {
