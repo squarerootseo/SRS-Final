@@ -1,27 +1,17 @@
-# 301 Redirects — Old WordPress URLs to New Astro Site
-# Format: /old-path  /new-path  status-code
-
-# Pages with matching paths (trailing slash cleanup)
-/blog/                              /blog               301
-/contact/                           /contact            301
-/case-studies/                      /case-studies       301
-/about/                             /about              301
-/website-development/               /website-development 301
-/branding/                          /branding           301
-
-# Pages with changed paths
-/search-engine-optimization/        /seo                301
-/performance-marketing/             /ppc                301
-/social-media-management/           /social-media       301
-
-# Individual case study pages → case studies hub
-/industrial-supply-case-study/      /case-studies       301
-/packaging-manufacturer-case-study/ /case-studies       301
-/accounting-firm-case-study/        /case-studies       301
-/fabric-manufacturer-case-study/    /case-studies       301
-/fb-franchise-case-study/           /case-studies       301
-/hotel-resort-case-study/           /case-studies       301
-
-# Removed pages → homepage
-/terms-and-conditions/              /                   301
-/privacy-policy/                    /                   301
+/blog/ /blog 301
+/contact/ /contact 301
+/case-studies/ /case-studies 301
+/about/ /about 301
+/website-development/ /website-development 301
+/branding/ /branding 301
+/search-engine-optimization/ /seo 301
+/performance-marketing/ /ppc 301
+/social-media-management/ /social-media 301
+/industrial-supply-case-study/ /case-studies 301
+/packaging-manufacturer-case-study/ /case-studies 301
+/accounting-firm-case-study/ /case-studies 301
+/fabric-manufacturer-case-study/ /case-studies 301
+/fb-franchise-case-study/ /case-studies 301
+/hotel-resort-case-study/ /case-studies 301
+/terms-and-conditions/ / 301
+/privacy-policy/ / 301
