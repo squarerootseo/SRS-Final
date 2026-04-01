@@ -1,3 +1,4 @@
+# Legacy WordPress URL redirects (301 permanent)
 /search-engine-optimization/ /seo 301
 /performance-marketing/ /ppc 301
 /social-media-management/ /social-media 301
@@ -8,3 +9,17 @@
 /fb-franchise-case-study/ /case-studies 301
 /hotel-resort-case-study/ /case-studies 301
 /terms-and-conditions/ /terms-of-service 301
+
+# Trailing slash redirects (301 permanent)
+/blog/ /blog 301
+/contact/ /contact 301
+/case-studies/ /case-studies 301
+/about/ /about 301
+/website-development/ /website-development 301
+/privacy-policy/ /privacy-policy 301
+/branding/ /branding 301
+/seo/ /seo 301
+/ppc/ /ppc 301
+/social-media/ /social-media 301
+/terms-of-service/ /terms-of-service 301
+/acid-test/ /acid-test 301
