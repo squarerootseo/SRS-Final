@@ -8,9 +8,11 @@ interface Props {
   title: string;
   description: string;
   activePage?: string;
+  ogImage?: string;
 }
 
-const { title, description, activePage = '' } = Astro.props;
+const { title, description, activePage = '', ogImage = '/srs_logo.png' } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, 'https://squarerootseo.com');
 ---
 
 <!DOCTYPE html>
@@ -20,6 +22,24 @@ const { title, description, activePage = '' } = Astro.props;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
   <meta name="description" content={description}>
+  <link rel="canonical" href={canonicalURL.href}>
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={canonicalURL.href}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={`https://squarerootseo.com${ogImage}`}>
+  <meta property="og:site_name" content="Square Root SEO">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={`https://squarerootseo.com${ogImage}`}>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Rubik:wght@400;500;600;700&display=swap">
   <link rel="icon" type="image/png" href="/favicon.png" sizes="16x16">
