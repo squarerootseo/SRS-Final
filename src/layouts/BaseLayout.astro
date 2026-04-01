@@ -12,7 +12,7 @@ interface Props {
 }
 
 const { title, description, activePage = '', ogImage = '/srs_logo.png' } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, 'https://www.squarerootseo.com');
+const canonicalURL = new URL(Astro.url.pathname, 'https://squarerootseo.com');
 ---
 
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://www.squarerootseo.com'
   <meta property="og:url" content={canonicalURL.href}>
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
-  <meta property="og:image" content={`https://www.squarerootseo.com${ogImage}`}>
+  <meta property="og:image" content={`https://squarerootseo.com${ogImage}`}>
   <meta property="og:site_name" content="Square Root SEO">
   <meta property="og:locale" content="en_IN">
 
@@ -38,7 +38,7 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://www.squarerootseo.com'
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content={title}>
   <meta name="twitter:description" content={description}>
-  <meta name="twitter:image" content={`https://www.squarerootseo.com${ogImage}`}>
+  <meta name="twitter:image" content={`https://squarerootseo.com${ogImage}`}>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Rubik:wght@400;500;600;700&display=swap">
